@@ -1,0 +1,113 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f5f5f5;
+}
+
+.form-submit {
+    text-align: center;
+}
+
+.submit-toggle {
+    display: none;
+}
+
+/* BOUTON AVANT CLIC */
+.btn-submit {
+    position: relative;
+    overflow: hidden;                 /* empêche le check de dépasser */
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 52px;                     /* épaisseur du bouton */
+    padding: 0 40px;                  /* largeur (tu peux réduire à 32 si tu veux) */
+
+    font-size: 1rem;
+    font-family: system-ui, sans-serif;
+    color: #ffffff;
+
+    background-color: #c0392b;
+    border-radius: 26px;              /* moitié de la hauteur => jolie pilule */
+    border: none;
+    cursor: pointer;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+
+    transition:
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        padding 0.25s ease,
+        height 0.25s ease,
+        transform 0.12s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-1px);
+}
+
+.btn-submit:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+/* TEXTE ET ICÔNE SUPERPOSÉS AU CENTRE */
+.btn-text,
+.btn-icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Texte visible au début */
+.btn-text {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+/* Icône cachée au début */
+.btn-icon {
+    display: block;
+    height: 22px;                     /* taille du check */
+    width: auto;
+    opacity: 0;
+    transform: translateX(-50%) scale(0.6);
+}
+
+/* APRÈS CLIC : BOUTON UN PEU PLUS PETIT + VERT */
+.submit-toggle:checked + .btn-submit {
+    background-color: #27ae60;
+    padding: 0 28px;                  /* un peu moins large après validation */
+    height: 46px;                     /* bouton légèrement plus petit */
+    border-radius: 23px;
+}
+
+/* le texte disparaît */
+.submit-toggle:checked + .btn-submit .btn-text {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.7);
+}
+
+/* le check apparaît, bien centré, sans dépasser */
+.submit-toggle:checked + .btn-submit .btn-icon {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+/* petite anim optionnelle */
+.submit-toggle:checked + .btn-submit .btn-icon {
+    animation: pop 0.2s ease-out;
+}
+
+@keyframes pop {
+    0%   { transform: translateX(-50%) scale(0.6); }
+    60%  { transform: translateX(-50%) scale(1.2); }
+    100% { transform: translateX(-50%) scale(1); }
+}
