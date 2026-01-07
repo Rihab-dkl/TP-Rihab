@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+/* Bannière 650x90 */
+.banner {
+    width: 650px;
+    height: 150px;
+    background: linear-gradient(135deg, #c0392b, #e67e22);
+    color: #ffffff;
+    font-family: system-ui, sans-serif;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Bloc texte */
+.banner-text {
+    flex: 1;
+}
+
+/* Petit texte au dessus */
+.tagline {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    /* TEXTE ANIMÉ - apparaît en fondu + montée */
+    animation: fadeUp 1s ease-out forwards;
+}
+
+/* Titre principal */
+.title {
+    font-size: 1.4rem;
+    margin: 4px 0 8px;
+
+    /* TEXTE ANIMÉ - arrive avec un léger décalage */
+    animation: fadeUp 1s ease-out 0.3s forwards;
+    opacity: 0; /* état initial avant animation */
+}
+
+/* Bouton */
+.cta {
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: none;
+    background: #ffffff;
+    color: #c0392b;
+    font-weight: 600;
+    cursor: pointer;
+
+    /* BOUTON ANIMÉ - effet de pulsation continue */
+    animation: pulse 1.4s ease-in-out 0.8s infinite;
+}
+
+/* Bloc image à droite */
+.banner-image {
+    width: 150px;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;      /* centre parfaitement verticalement */
+    padding-right: 10px; 
+}
+
+/* Image animée */
+.banner-image img {
+    max-height: 110%;
+    transform-origin: center bottom;
+
+    /* IMAGE ANIMÉE - léger flottement vertical */
+    animation: float 1.8s ease-in-out infinite alternate;
+}
+
+/* ANIMATION 1 - apparition en fondu + translation vers le haut */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ANIMATION 2 - bouton qui pulse (zoom léger) */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0.0);
+    }
+    50% {
+        transform: scale(1.06);
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0.0);
+    }
+}
+
+/* ANIMATION 3 - image qui flotte doucement vers le haut */
+@keyframes float {
+    0% {
+        transform: translateY(4px);
+    }
+    100% {
+        transform: translateY(-4px);
+    }
+}
