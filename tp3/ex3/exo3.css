@@ -1,0 +1,127 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #e8e7e7;
+
+}
+
+h1 {
+  font-size: clamp(28px, 4vw, 48px);
+  margin: 32px 16px 12px;
+  text-align: center;
+}
+
+p {
+
+  color: #a2a2a2; /* gris clair comme sur l’exemple */
+  line-height: 1.5;
+  max-width: 1400px;
+  margin: 2rem;
+  font-size: 15px;
+}
+
+/* Header commun */
+#header {
+  position: relative;
+}
+#header nav a {
+  color: #000;
+  text-decoration: none;
+}
+#header nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Desktop (≥ 981px) ===== */
+@media (min-width: 981px) {
+  .nav-button-open {
+    display: none;
+  }
+
+  #header nav {
+    position: static;
+    display: block;
+    background: #666666;
+    width: 100%;
+  }
+  #header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  #header nav a {
+    color: #ffffff;
+  }
+  #header nav a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+}
+
+/* ===== Mobile/Tablet (≤ 980px) ===== */
+/*  */
+/* ===== Mobile/Tablet (≤ 980px) ===== */
+/* ===== Mobile/Tablet (≤ 980px) ===== */
+@media (max-width: 980px) {
+  /* Réserve la place du bouton pour éviter qu'il chevauche le titre */
+  #header {
+    min-height: 64px;
+    position: relative;
+  }
+
+  /* Bouton hamburger */
+  .nav-button-open {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    display: inline-flex;
+    z-index: 30;
+  }
+  .nav-button-open img { width: 56px; height: 56px; display: block; }
+
+  /* Menu FERME par défaut : 0 de hauteur → n'occupe pas d'espace */
+  #header nav {
+    position: relative;              /* dans le flux */
+    background: #666666;
+    overflow: hidden;
+    max-height: 0;                   /* fermé */
+    transition: max-height .4s ease; /* effet d'ouverture */
+    z-index: 1;
+  }
+
+  /* Style de la liste */
+  #header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 16px 20px;
+  }
+  #header nav li + li { margin-top: 10px; }
+  #header nav a {
+    display: block;
+    padding: 10px 12px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+  }
+  #header nav a:hover { background: rgba(255,255,255,0.12); }
+
+  /* OUVERT via l’ancre #header → le menu prend de la hauteur et pousse le contenu */
+  #header:target nav {
+    max-height: 400px;               /* assez pour tous les liens */
+  }
+
+  /* Masquer l’icône quand le menu est ouvert */
+  #header:target .nav-button-open { display: none; }
+}

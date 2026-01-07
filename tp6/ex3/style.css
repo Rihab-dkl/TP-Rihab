@@ -1,0 +1,23 @@
+body {
+    font-family: system-ui, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.content {
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+/* Image d'hélice en position fixe */
+.helice {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    width: 80px;
+    height: auto;
+
+    /* on prépare la rotation */
+    transform-origin: 50% 50%;   /* centre de l'image */
+    transform: rotate(0deg);
+}

@@ -1,0 +1,57 @@
+.zone {
+    position: relative;  
+    /* Permet de placer le rideau en absolute par rapport à cette zone */
+
+    width: 400px;
+    height: 300px;
+
+    overflow: hidden;  
+    /* Empêche le rideau ou l’image de déborder de la zone */
+
+    margin: 40px auto;
+    border: 2px solid #d70505;
+}
+
+.zone img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Assure que l’image s’adapte sans déformation */
+
+    /* Optionnel : rend l’effet plus pro car l’image peut bouger légèrement */
+    transition: transform 0.8s ease; 
+}
+
+/* Élément qui servira d’animation : le rideau */
+.rideau {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;  
+    /* Le rideau couvre toute l’image au départ */
+
+    height: 100%;
+    background-color: rgb(169, 25, 25);
+
+    /* Ligne la plus importante : permet d’animer l’ouverture/fermeture */
+    transition: width 0.8s ease;  
+    /* L’animation consiste uniquement à réduire la largeur */
+}
+
+/* Animation au survol → début de la transition */
+.zone:hover .rideau {
+    width: 0;  
+    /* Le rideau disparaît progressivement grâce à transition */
+}
+
+/* Optionnel : amélioration visuelle */
+.zone:hover img {
+    transform: scale(1.05);  
+    /* Petit zoom pour un effet plus moderne */
+}
+
+/* Optionnel : feedback utilisateur */
+.zone:hover {
+    cursor: pointer;
+}

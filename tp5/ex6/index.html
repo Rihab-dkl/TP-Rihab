@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercice 6 – Effet de Parallaxe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <section class="parallax" data-speed="0.3">
+    <img src="assets/img1.jpeg" class="bg" alt="Image parallaxe 1">
+    <div class="overlay">
+      <h1>Effet de parallaxe</h1>
+      <p>Fais défiler la page pour voir l’arrière-plan se déplacer plus lentement.</p>
+    </div>
+  </section>
+
+
+  <section class="text">
+    <h2>1. Comprendre l’effet</h2>
+    <p>
+      Le parallaxe crée une impression de profondeur en faisant bouger 
+      l’arrière-plan moins vite que le contenu situé au premier plan.
+    </p>
+    <p>
+      Ce léger décalage reproduit ce que l’on observe naturellement dans un paysage :
+      les éléments proches semblent se déplacer plus vite que ceux qui sont éloignés.
+    </p>
+  </section>
+
+
+
+  <section class="parallax" data-speed="0.15">
+    <img src="assets/img2.jpg" class="bg" alt="Image parallaxe 2">
+    <div class="overlay">
+      <h2>Exemple de section</h2>
+      <p>Chaque section peut utiliser une vitesse différente pour varier l’effet.</p>
+    </div>
+  </section>
+
+
+  <!-- ================================
+       PARTIE 2 : FONCTIONNEMENT GÉNÉRAL
+  ================================== -->
+  <section class="text">
+    <h2>2. Fonctionnement général</h2>
+    <p>
+      L’effet repose sur un simple principe : l’image d’arrière-plan est déplacée en 
+      fonction du défilement de la page. Plus la vitesse est faible, plus l’effet est subtil.
+    </p>
+    <p>
+      Chaque section possède une valeur qui contrôle la vitesse du mouvement, 
+      ce qui rend l’effet modulable et adaptable à n’importe quelle mise en page.
+    </p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

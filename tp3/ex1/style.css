@@ -1,0 +1,21 @@
+/* BLOC PAR DÉFAUT */
+#bloc {
+  width: 300px;
+  height: 200px;
+  background-color: #8000ff; /* couleur 1 */
+  margin: 20px auto; /* centrer */
+}
+
+/* ⭐ Quand la largeur devient < 960px */
+@media (max-width: 960px) {
+  #bloc {
+      background-color: #1100ff; /* couleur 2 */
+  }
+}
+
+/* ⭐ Quand la largeur devient < 480px */
+@media (max-width: 480px) {
+  #bloc {
+      background-color: #00ffea; /* couleur 3 */
+  }
+}

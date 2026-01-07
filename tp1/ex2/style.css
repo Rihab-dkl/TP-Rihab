@@ -1,0 +1,267 @@
+/* =============== COULEURS / FOND GLOBAL =============== */
+
+/* =============== COULEURS / FOND GLOBAL =============== */
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+
+  /* 1) gris global
+     2) bande bordeaux en haut (wrap.gif)
+     3) bande noire en bas */
+  background-color: #eee;
+  background-image:
+    url("assets/wrap.gif"),
+    linear-gradient(#333, #333);
+  background-repeat:
+    repeat-x,
+    repeat-x;
+  background-position:
+    top left,
+    bottom left;
+  background-size:
+    auto,
+    100% 129px;  /* bande noire de 129px en bas */
+}
+
+
+
+/* =============== BLOC PAGE CENTRÉ =============== */
+
+#page {
+  width: 960px;
+  margin: 95px auto 79px; /* marge en bas AVANT le footer */
+  background: #fff ;
+}
+
+
+
+/* =============== HEADER =============== */
+/* Le header reste large de 960px mais le bandeau #966,
+   lui, est déjà géré par wrap.gif sur le <body> */
+
+header {
+  position: relative;
+  height: 192px;                /* hauteur du header de la maquette */
+  
+}
+
+/* image décorative header.gif centrée dans les 960px */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 960px;
+  height: 192px;
+  background: url("assets/header.gif") no-repeat left top;
+  
+}
+
+/* Texte et menu du header placés plus haut dans la bande */
+header p,
+header ul {
+  position: absolute;
+  z-index: 3; /* par-dessus l'image du header */
+}
+
+/* "Header content" */
+header p {
+  top: -20px;        /* Ajuste selon ta maquette */
+  left: 210px;
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+    font-weight: bold; /* ← ICI */
+
+}
+
+/* Menu du header */
+header ul {
+  top: -25px;        /* Ajuste si besoin */
+  right: 40px;
+  display: flex;     /* Remis pour que les <li> restent en ligne */
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header li a,
+header li a:visited {
+  color: #fff;       /* Liens du header en blanc */
+  text-decoration: none;
+  font-size: 12px;
+}
+
+header li a:hover {
+  color: #300;       /* Hover demandé dans la consigne */
+}
+
+/* =============== CONTENU (SECTION + ASIDE) =============== */
+
+#content {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  padding: 0px 40px 40px; /* ↓ beaucoup moins d’espace en haut */
+margin-top: -70px;   /* remonte le contenu */
+
+}
+
+
+/* Colonne principale (texte + image) */
+#content > section {
+  flex: 1;
+  padding-left: 90px; /* mets 80px voire 90px selon ce qui correspond à la maquette */
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* Titres de la colonne principale */
+#content h1 {
+  font-size: 22px;
+    margin: 0 0 10px;
+
+}
+
+
+#content h2 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+  padding-left: 55px;
+  background: url("assets/h2_ornament.gif") no-repeat left center;
+}
+
+/* Image du contenu à gauche */
+/* Image à gauche dans la zone principale */
+/* Image à gauche, texte qui s’enroule à droite */
+#content img {
+  float: left;
+  margin: 20px 25px 15px -60px; /* droite / bas / gauche (négatif = vers la colonne de gauche) */
+  border: 4px solid #fff;
+  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
+
+
+/* Textes qui s’écoulent autour */
+#content p {
+  overflow: visible; /* permet au texte de continuer sous l’image */
+}
+
+
+
+/* Colonne secondaire (aside à gauche) */
+aside {
+  width: 192px;
+  /* on remonte le texte sous le logo : */
+  padding: 90px 18px 25px 24px;   /* au lieu de 140px en haut */
+  font-size: 11px;
+  line-height: 1.5;
+  background: #fff url("assets/page.gif") right top;
+  border-right: 1px solid #e0e0e0;
+  color: #333;
+}
+
+
+/* titre aside */
+aside h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+/* lien "Read more" dans l'aside */
+aside a {
+  text-decoration: underline;
+}
+
+/* =============== FOOTER =============== */
+
+/* Bande noire sur toute la largeur derrière le footer */
+/* Footer = bande noire sur toute la largeur */
+footer {
+  position: relative;
+  width: 960px;
+  height: 129px;
+  margin: 0 auto;
+  background: url("assets/footer.gif") no-repeat center top;
+  color: #eee;
+  font-size: 11px;
+  z-index: 2; /* au-dessus de la bande noire */
+}
+
+footer p {
+  position: absolute;
+  left: 65px;
+  bottom: 18px;
+  margin: 0;
+}
+
+
+/* Image footer.gif centrée sur 960px dans le footer */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 960px;
+  height: 129px;
+  transform: translateX(-50%);
+  background: url("assets/footer.gif") no-repeat center top;
+}
+
+/* texte "Photograph by ..." posé sur la vague */
+
+
+/* liens du footer */
+footer a:link,
+footer a:visited {
+  color: #c99;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* Titres de la colonne principale */
+/* Titres H2 de la colonne principale avec ornement à gauche */
+#content h2 {
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 40px 0 20px;
+  padding-left: 190px;  /* >>> on décale VRAIMENT le texte */
+  background: url("assets/h2_ornament.gif") no-repeat left center;
+}
+
+/* Texte aside = secondary content */
+aside p,
+aside strong,
+aside a {
+  color: #300; /* couleur content-secondary */
+}
+
+/* LIEN "Read more →" du aside */
+aside a:link,
+aside a:visited {
+  color: #300;
+  text-decoration: underline;
+}
+
+/* Welcome to my awesome website. */
+#content h1 {
+  color: #633; /* couleur du header et des titres h1/h3 */
+}
+
+/* Indeed, this is an awesome website. */
+#content h2 {
+  color: #999;
+}

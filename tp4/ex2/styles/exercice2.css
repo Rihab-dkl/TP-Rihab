@@ -1,0 +1,100 @@
+body {
+    background-color: #bfbfbf;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  
+  /* Liste principale */
+  #telechargement {
+    list-style: none;
+    padding: 0;
+    width: 600px;
+    margin: 0 auto;
+  }
+  
+  #telechargement li {
+    border-bottom: 2px solid #000;
+    padding: 20px 0;
+  }
+  
+  /* Lien */
+  #telechargement a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 60px;
+    line-height: 40px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-position: 0 center;
+  }
+  
+  /* === Icônes selon le type de fichier === */
+  #telechargement a[href$=".pdf"] {
+    background-image: url("../icones/pdf.png");
+  }
+  
+  #telechargement a[href$=".doc"] {
+    background-image: url("../icones/doc.png");
+  }
+  
+  #telechargement a[href$=".xls"] {
+    background-image: url("../icones/xls.png");
+  }
+  
+  #telechargement a[href$=".png"] {
+    background-image: url("../icones/png.png");
+  }
+  
+  #telechargement a[href$=".rtf"] {
+    background-image: url("../icones/rtf.png");
+  }
+  
+  #telechargement a[href$=".zip"] {
+    background-image: url("../icones/zip.png");
+  }
+  
+  #telechargement a[href$=".svg"] {
+    background-image: url("../icones/svg.png");
+  }
+  
+  #telechargement a[href$=".ods"] {
+    background-image: url("../icones/ods.png");
+  }
+  
+  #telechargement a[href$=".ppt"] {
+    background-image: url("../icones/ppt.png");
+  }
+  
+  /* === Ajout du nom du fichier avec ::before === */
+  #telechargement a::before {
+    content: attr(href);
+  }
+  
+  /* === Ajout du drapeau de langue avec ::after === */
+  #telechargement a[hreflang="fr"]::after {
+    content: " ";
+    display: inline-block;
+    background: url("../icones/fr.jpg") no-repeat center;
+    background-size: 20px 13px;
+    width: 20px;
+    height: 13px;
+    margin-left: 8px;
+  }
+  
+  #telechargement a[hreflang="en"]::after {
+    content: " ";
+    display: inline-block;
+    background: url("../icones/en.jpg") no-repeat center;
+    background-size: 20px 13px;
+    width: 20px;
+    height: 13px;
+    margin-left: 8px;
+  }

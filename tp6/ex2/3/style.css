@@ -1,0 +1,28 @@
+/* Conteneur centré */
+.loader-rotate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+/* Image qui tourne */
+.loader-rotate img {
+    width: 120px;
+
+    /* Animation de rotation */
+    animation-name: spin;              /* nom de l'animation */
+    animation-duration: 1.2s;          /* vitesse pour un tour complet */
+    animation-timing-function: linear; /* vitesse constante */
+    animation-iteration-count: infinite; /* boucle infinie */
+}
+
+/* Définition de l’animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);        /* départ */
+    }
+    100% {
+        transform: rotate(360deg);      /* un tour complet */
+    }
+}

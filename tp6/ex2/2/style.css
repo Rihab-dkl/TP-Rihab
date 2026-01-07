@@ -1,0 +1,44 @@
+.wave {
+    display: flex;
+    justify-content: center;
+    align-items: center;          /* aligne les barres au centre verticalement */
+    gap: 8px;
+    height: 160px;
+    margin-top: 100px;
+}
+
+/* Barres */
+.bar {
+    width: 18px;
+    height: 80px;                 /* hauteur "de base" */
+    background-color: #c92f21;
+    border-radius: 10px;
+
+    /* On n’anime plus height, mais un scale vertical */
+    transform-origin: center;     /* la barre se déforme autour de son centre */
+    animation-name: wave;         /* nom de l’animation */
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/* Décalage pour l’effet de vague */
+.bar:nth-child(1) { animation-delay: 0s; }
+.bar:nth-child(2) { animation-delay: 0.1s; }
+.bar:nth-child(3) { animation-delay: 0.2s; }
+.bar:nth-child(4) { animation-delay: 0.3s; }
+.bar:nth-child(5) { animation-delay: 0.4s; }
+.bar:nth-child(6) { animation-delay: 0.5s; }
+
+/* Animation : la barre se compresse / s’étire autour du centre */
+@keyframes wave {
+    0% {
+        transform: scaleY(0.4);   /* petite barre (haut et bas rapprochés du centre) */
+    }
+    50% {
+        transform: scaleY(1.3);   /* barre allongée (haut et bas plus loin du centre) */
+    }
+    100% {
+        transform: scaleY(0.4);   /* revient à la petite taille */
+    }
+}

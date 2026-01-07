@@ -1,0 +1,51 @@
+/* Conteneur des 3 points */
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;              /* espace entre les points */
+    margin-top: 100px;
+}
+
+/* Style de base de chaque point */
+.point {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;     /* rend les divs circulaires */
+    background-color: #d70505;
+
+    /* Animation appliquée à chaque point */
+    animation-name: pulse;              /* nom de l’animation définie plus bas */
+    animation-duration: 0.8s;           /* durée d’un cycle complet */
+    animation-timing-function: ease-in-out; /* vitesse qui accélère puis ralentit */
+    animation-iteration-count: infinite;    /* boucle infinie */
+}
+
+/* Décalage de l’animation pour chaque point */
+.point:nth-child(1) {
+    animation-delay: 0s;        /* le premier commence tout de suite */
+}
+
+.point:nth-child(2) {
+    animation-delay: 0.15s;     /* le deuxième commence un peu après */
+}
+
+.point:nth-child(3) {
+    animation-delay: 0.3s;      /* le troisième encore un peu après */
+}
+
+/* Définition de l’animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);     /* taille normale au début */
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.6);   /* le point grossit au milieu de l’animation */
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);     /* revient à la taille normale à la fin */
+        opacity: 0.5;
+    }
+}

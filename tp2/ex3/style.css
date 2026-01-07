@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Carré principal */
+#container {
+  width: 500px;
+  height: 500px;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);   /* ✅ 5 colonnes */
+  grid-template-rows: repeat(5, 1fr);
+
+  grid-template-areas:
+    "seven seven seven seven six"
+    "eight three three two   six"
+    "eight four  one   two   six"
+    "eight four  five  five  five"
+    "eight nine  nine  nine  nine";
+}
+
+/* style commun */
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: bold 2rem/1 sans-serif;
+}
+
+/* Placement + couleurs */
+
+#item1 { grid-area: one;  background:#ff7a18; }   /* orange centre */
+#item2 { grid-area: two;  background:#c6ff1a; }   /* jaune-vert */
+#item3 { grid-area: three;background:#1aff3b; }   /* vert vif */
+#item4 { grid-area: four; background:#3355ff; }   /* bleu, 2 lignes */
+#item5 { grid-area: five; background:#ffb5f1; }   /* rose, 2 colonnes */
+#item6 { grid-area: six;  background:#09ffd0; }   /* colonne droite */
+#item7 { grid-area: seven;background:#f5ff7a; }   /* bande du haut */
+#item8 { grid-area: eight;background:#1f6f7d; }   /* grande colonne gauche */
+#item9 { grid-area: nine; background:#9fffff; }   /* bande du bas */

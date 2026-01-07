@@ -1,0 +1,185 @@
+:root{
+    --bg: #0b1220;
+  
+    --text: rgba(255,255,255,.92);
+    --muted: rgba(255,255,255,.72);
+    --muted2: rgba(255,255,255,.58);
+  
+    --panel: rgba(255,255,255,.06);
+    --stroke: rgba(255,255,255,.14);
+  
+    --shadow: 0 18px 60px rgba(0,0,0,.45);
+  }
+  
+  *{ box-sizing: border-box; }
+  
+  html, body{ height: 100%; }
+  
+  body{
+    margin: 0;
+    font-family: system-ui, -apple-system, "Poppins", Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    overflow-x: hidden;
+  }
+  
+  /* Fond DA */
+  body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+      radial-gradient(1100px 600px at 18% -10%, rgba(87, 168, 255, .35), transparent 62%),
+      radial-gradient(900px 520px at 90% 8%, rgba(180, 106, 255, .28), transparent 58%),
+      radial-gradient(900px 600px at 50% 110%, rgba(87, 168, 255, .18), transparent 60%),
+      radial-gradient(900px 600px at 0% 110%, rgba(180, 106, 255, .14), transparent 62%);
+  }
+  
+  body::after{
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,.28));
+    pointer-events: none;
+  }
+  
+  .wrap{
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 26px;
+  }
+  
+  /* Header page */
+  .page-head{
+    padding: 26px 0 10px;
+  }
+  
+  .page-head__top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  .chip{
+    display: inline-flex;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.10);
+    border: 1px solid var(--stroke);
+    color: var(--muted);
+    font-size: 13px;
+  }
+  
+  .meta{
+    color: var(--muted2);
+    font-size: 14px;
+  }
+  
+  .page-title{
+    margin: 16px 0 0;
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 1.2px;
+    font-weight: 800;
+    color: rgba(255,255,255,.86);
+    text-transform: uppercase;
+  }
+  
+  .page-actions{
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .btn{
+    display: inline-flex;
+    text-decoration: none;
+    color: var(--text);
+    padding: 10px 13px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.12);
+    border: 1px solid var(--stroke);
+    transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+  
+  .btn:hover{
+    transform: translateY(-1px);
+    background: rgba(255,255,255,.16);
+    border-color: rgba(255,255,255,.22);
+  }
+  
+  /* Bloc exercice */
+  .exo-card{
+    margin: 18px 0 22px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  
+  .exo-title{
+    margin: 0;
+    padding: 14px 16px;
+    font-size: 14px;
+    letter-spacing: .7px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.86);
+    background: rgba(255,255,255,.04);
+    border-bottom: 1px solid rgba(255,255,255,.12);
+  }
+  
+  .exo-view{
+    padding: 12px 12px 0;
+    background: rgba(0,0,0,.10);
+  }
+  
+  .exo-iframe{
+    width: 100%;
+    height: 640px;
+    border: 0;
+    background: #fff;
+    border-radius: 6px;
+  }
+  
+  .exo-comment{
+    margin: 12px;
+    padding: 14px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 6px;
+  }
+  
+  .exo-comment__title{
+    margin: 0 0 8px;
+    font-size: 13px;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.82);
+  }
+  
+  .exo-comment p{
+    margin: 0 0 10px;
+    color: rgba(255,255,255,.72);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  
+  .exo-comment p:last-child{
+    margin-bottom: 0;
+  }
+  
+  /* Footer */
+  .page-footer{
+    padding: 18px 0 26px;
+    text-align: center;
+    color: var(--muted2);
+    font-size: 13px;
+  }
+  
+  .page-footer p{
+    margin: 0;
+  }

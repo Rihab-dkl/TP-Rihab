@@ -1,0 +1,13 @@
+body {
+  background-color: #000000;
+  color: white;
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+  h1 {
+    margin-bottom: 20px;
+  }
+  p {
+    line-height: 1.6;
+  }

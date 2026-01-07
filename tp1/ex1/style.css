@@ -1,0 +1,179 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #3b3b3b;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  color: #fff;
+}
+
+.sheet {
+  width: 1180px;
+}
+
+.block-title {
+  background: #c40038;
+  padding: 20px;
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.block-title h2 {
+  margin: 0 auto;
+}
+
+.display-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  margin-right: 65px; /* espace à droite du bord */
+}
+
+.display-boxes .display-box:first-child {
+  width: 600px; /* le cadre du haut arrive jusqu'au bord droit */
+}
+
+.display-boxes .display-box:last-child {
+  width: 250px; /* le cadre du bas plus petit */
+}
+
+.display-box {
+  border: 2px dashed #fff;
+  padding: 8px 15px;
+}
+
+
+
+.flex-table, .items-table {
+  width: 100%;
+  border: 3px solid #fff;
+  border-collapse: collapse;
+  background: #ececec;
+  color: #000;
+
+  border: 2px solid #000; /* ➜ Bordure noire autour du tableau */
+  margin-top: 15px;        /* ➜ Espace entre le titre et le tableau */
+  margin-bottom: 20px;     /* ➜ Espace avec le bloc suivant */
+  box-sizing: border-box;  /* pour bien calculer la largeur */
+}
+
+.flex-table thead th {
+  background: #aa002e;
+  color: #fff;
+  padding: 10px;
+  border: 2px solid #000;
+}
+
+.flex-table td, .items-table td, .items-table th {
+  border: 2px solid #000;
+  padding: 12px;
+  text-align: center;
+}
+
+.green {
+  color: #1CA3A0;
+  font-weight: 700;
+}
+
+.sub-title {
+  background: #c40038;
+  color: #fff;
+  font-weight: 700;
+}
+
+.block-title.child {
+  margin-top: 15px;
+}
+
+.items-zone {
+  border: 2px dashed #fff;
+  display: flex;
+  justify-content: space-evenly; /* espace équilibré */
+  align-items: center;
+  gap: 40px;
+  padding: 20px 40px; /* marge interne à gauche et à droite */
+  background: transparent;
+}
+
+
+.item {
+  background: #fff;
+  padding: 16px 45px;
+  border-radius: 4px;
+  color: #c40038;
+  font-weight: 700;
+  font-size: 22px;
+  border: 3px solid transparent; /* option : si tu veux du contour à l’intérieur */
+}
+
+.items-table th {
+  background: #c40038;
+  color: #fff;
+  font-weight: 700;
+}
+
+.items-table td {
+  background: #e7ebeb;
+  color: #c40038;
+  font-weight: 700;
+}
+
+.items-table span.green {
+  color: #1CA3A0;
+  font-weight: 700;
+}
+
+.big-cell {
+  text-align: center;
+}
+
+/* Fixe la bordure centrale de la ligne flex-shrink */
+.items-table .flex-shrink-row td:first-of-type {
+  border-right: 1px solid #000;
+}
+
+.items-table .big-cell {
+  border-left: none;  /* évite une double bordure */
+  text-align: center;
+}
+.items-table .big-cell {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+.red {
+  color: #c40038;
+  font-weight: 700;
+}
+
+body {
+  background: #3b3b3b; /* ton fond foncé autour */
+}
+
+.sheet {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.section-block {
+  background: #ececec;      /* fond clair comme les tableaux */
+  margin-bottom: 25px;      /* espace entre les blocs */
+}
+
+.commentaire {
+  background: #222;
+  margin-top: 20px;
+  padding: 20px;
+  border-left: 5px solid #c40038;
+}
+
+html, body {
+  height: auto !important;
+  min-height: 100% !important;
+}

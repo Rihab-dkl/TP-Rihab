@@ -1,0 +1,47 @@
+/* Grille */
+.grid-morph {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);  /* 3 colonnes */
+    grid-auto-rows: 80px;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+/* Cellule de base */
+.cell {
+    background-color: #c0392b;
+    border-radius: 8px;             /* forme carré arrondi au départ */
+
+    /* Animation de changement de forme */
+    animation-name: morph;          /* nom de l’animation */
+    animation-duration: 1.2s;       /* vitesse d’un cycle */
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; /* va et vient (aller-retour) */
+}
+
+/* Décalage entre les cellules pour créer l’effet en chaîne */
+.cell:nth-child(1) { animation-delay: 0s; }
+.cell:nth-child(2) { animation-delay: 0.1s; }
+.cell:nth-child(3) { animation-delay: 0.2s; }
+.cell:nth-child(4) { animation-delay: 0.3s; }
+.cell:nth-child(5) { animation-delay: 0.4s; }
+.cell:nth-child(6) { animation-delay: 0.5s; }
+.cell:nth-child(7) { animation-delay: 0.6s; }
+.cell:nth-child(8) { animation-delay: 0.7s; }
+.cell:nth-child(9) { animation-delay: 0.8s; }
+
+/* Animation : la forme change + léger zoom */
+@keyframes morph {
+    0% {
+        border-radius: 8px;         /* plutôt carré */
+        transform: scale(1);
+        background-color: #c0392b;
+    }
+    100% {
+        border-radius: 50px;         /* devient rond */
+        transform: scale(1.2);      /* un peu plus gros */
+        background-color: #27ae60;  /* couleur différente (optionnel) */
+    }
+}

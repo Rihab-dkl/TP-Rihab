@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TP6 - Exercice 2 - Animations de chargement</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="head">
+    <h1>Exercice 2 - Animations de chargement</h1>
+    <p>Sélectionne une variante pour l’afficher. Les sous-exercices sont séparés dans des dossiers.</p>
+  </header>
+
+  <main class="layout">
+    <nav class="menu" aria-label="Sous-exercices">
+      <button class="tab is-active" data-src="1/index.html">Version 1</button>
+      <button class="tab" data-src="2/index.html">Version 2</button>
+      <button class="tab" data-src="3/index.html">Version 3</button>
+      <button class="tab" data-src="4/index.html">Version 4</button>
+      <button class="tab" data-src="5/index.html">Version 5</button>
+      <button class="tab" data-src="6/index.html">Version 6</button>
+      <button class="tab" data-src="7/index.html">Version 7</button>
+    </nav>
+
+    <section class="viewer" aria-label="Aperçu">
+      <iframe class="frame" title="Aperçu sous-exercice" src="1/index.html"></iframe>
+      <p class="hint">N'hésitez pas à tester les differentes versions</p>
+    </section>
+  </main>
+
+  <script>
+    const frame = document.querySelector(".frame");
+    const tabs = document.querySelectorAll(".tab");
+
+    tabs.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        tabs.forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+        frame.src = btn.dataset.src;
+      });
+    });
+  </script>
+</body>
+</html>

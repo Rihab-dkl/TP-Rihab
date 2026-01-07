@@ -1,0 +1,141 @@
+/* Base */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #eee;
+  color: #111;
+}
+
+/* Grille 3 colonnes centrée */
+.cols {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Carte colonne */
+.col {
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  overflow: hidden; /* masque les coins arrondis */
+}
+
+.col h2 {
+  margin: 0;
+  padding: 16px 18px;
+  font-size: 22px;
+  line-height: 1.2;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+/* Zone scrollable : 60vh */
+.col__body {
+  height: 60vh;            /* demandé */
+  overflow: auto;          /* scroll individuel si déborde */
+  padding: 16px 18px;
+}
+
+/* Option esthétique (facultatif) : rendre la colonne 2/3 cohérente avec ton TP4 */
+.col:nth-child(1) { border-color: #b91c1c33; }
+.col:nth-child(2) { border-color: #04785733; }
+.col:nth-child(3) { border-color: #1d4ed833; }
+
+/* (Facultatif) cacher la largeur de scrollbar sur Firefox */
+/* .col__body { scrollbar-width: thin; } */
+
+/* Base */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #eee;
+  color: #111;
+}
+
+/* Grille 3 colonnes */
+.cols {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Bloc colonne */
+.col {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  overflow: hidden;
+}
+
+/* Titre */
+.col h2 {
+  margin: 0;
+  padding: 16px 18px;
+  font-size: 22px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Barre de progression */
+progress {
+  width: 100%;
+  height: 8px;
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  display: block;
+}
+
+/* Couleur de remplissage (Chrome / Edge / Safari) */
+progress::-webkit-progress-bar {
+  background-color: #f0f0f0;
+}
+progress::-webkit-progress-value {
+  background-color: #1d4ed8; /* bleu */
+}
+
+/* Couleur pour Firefox */
+progress::-moz-progress-bar {
+  background-color: #1d4ed8;
+}
+
+/* Contenu scrollable */
+.col__body {
+  height: 60vh;
+  overflow: auto;
+  padding: 16px 18px;
+}
+
+
+.top-progress {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #ffffffcc;       /* léger fond pour la lisibilité */
+    backdrop-filter: blur(2px);
+    padding: 8px 0;
+  }
+  
+  /* même style que les barres locales */
+  .top-progress progress {
+    width: 100%;
+    height: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    display: block;
+    margin: 0;
+  }
+  .top-progress progress::-webkit-progress-bar { background: #f0f0f0; }
+  .top-progress progress::-webkit-progress-value { background: #111; } /* noir */
+  .top-progress progress::-moz-progress-bar { background: #111; }

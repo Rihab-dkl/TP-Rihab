@@ -1,0 +1,105 @@
+#item1 {
+  background-color: #f16b08;
+}
+
+#item2 {
+  background-color: #b2f109;
+}
+
+#item3 {
+  background-color: #23f109;
+}
+
+#item4 {
+  background-color: #3050f0;
+}
+
+#item5 {
+  background-color: #fbb5e9;
+}
+
+#item6 {
+  background-color: #0af1ad;
+}
+
+#item7 {
+  background-color: #e8f571;
+}
+
+#item8 {
+  background-color: #31838f;
+}
+/* reset simple */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* grille */
+#container {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 50px 50px 1fr 50px 50px 50px;
+  gap: 8px; 
+  padding: 8px; 
+  background: #db00a4; 
+  height: 100dvh; 
+  min-height: 100vh;                     /* ← plus robuste que 100vh sur mac/iOS */
+
+}
+
+
+
+
+/* header sur toute la largeur, 50px */
+#item1 {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+}
+
+/* colonne gauche pleine sous le header jusqu’au dessus du footer */
+#item2 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 6;
+}
+
+/* bandeau rose en haut du contenu (centre + droite), 50px */
+#item5 {
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+}
+
+/* gros bloc centre (cyan) qui descend jusqu’aux zones du bas */
+#item6 {
+  grid-column: 2 / 3;
+  grid-row: 3 / 5;
+} /* occupe la rangée 3 (1fr) + la rangée 4 (50px) */
+
+/* colonne droite (jaune) au-dessus du bloc #8 */
+#item7 {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+} /* sur la rangée 3 (1fr) */
+
+/* bloc bas centre (vert) 50px juste au-dessus du footer */
+#item3 {
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+}
+
+/* bloc bas droite (bleu canard) hauteur totale 100px = 2 rangées (4 et 5) */
+#item8 {
+  grid-column: 3 / 4;
+  grid-row: 4 / 6;
+}
+
+/* footer bleu (50px) sur toute la largeur */
+#item4 {
+  grid-column: 1 / 4;
+  grid-row: 6 / 7;
+}
